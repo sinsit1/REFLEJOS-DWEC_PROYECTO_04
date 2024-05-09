@@ -1,0 +1,104 @@
+/* Estilos de Tailwind CSS */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Reglas personalizadas */
+@layer base {
+  /* inter-regular - latin */
+  @font-face {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-display: optional;
+    src: url('/fonts/inter-regular-webfont.woff2') format('woff2'),
+      url('/fonts/inter-regular-webfont.woff') format('woff');
+  }
+
+  /* inter-500 - latin */
+  @font-face {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-display: optional;
+    src: url('/fonts/inter-medium-webfont.woff2') format('woff2'),
+      url('/fonts/inter-medium-webfont.woff') format('woff');
+  }
+
+  /* inter-700 - latin */
+  @font-face {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-display: optional;
+    src: url('/fonts/inter-bold-webfont.woff2') format('woff2'),
+      url('/fonts/inter-bold-webfont.woff') format('woff');
+  }
+
+  /* Write your own custom base styles here */
+  h1 {
+    @apply text-3xl font-bold md:text-5xl font-primary;
+  }
+
+  h2 {
+    @apply text-2xl font-bold md:text-4xl font-primary;
+  }
+
+  h3 {
+    @apply text-xl font-bold md:text-3xl font-primary;
+  }
+
+  h4 {
+    @apply text-lg font-bold font-primary;
+  }
+
+  body {
+    @apply text-sm font-primary md:text-base;
+  }
+
+  .layout {
+    /* 750px */
+    /* max-width: 43.75rem; */
+
+    /* 1100px */
+    max-width: 68.75rem;
+    @apply w-11/12 mx-auto;
+  }
+}
+
+
+.root {
+  padding-top: rem(80px);
+  padding-bottom: rem(80px);
+}
+
+.title {
+  font-weight: 900;
+  font-size: rem(34px);
+  margin-bottom: var(--mantine-spacing-md);
+  font-family:
+    Greycliff CF,
+    var(--mantine-font-family);
+
+  @media (max-width: $mantine-breakpoint-sm) {
+    font-size: rem(32px);
+  }
+}
+
+.control {
+  @media (max-width: $mantine-breakpoint-sm) {
+    width: 100%;
+  }
+}
+
+.mobileImage {
+  @media (min-width: 48em) {
+    display: none;
+  }
+}
+
+.desktopImage {
+  @media (max-width: 47.99em) {
+    display: none;
+  }
+}
