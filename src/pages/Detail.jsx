@@ -81,6 +81,8 @@ export default function Detail() {
         const deepCopy = cloneDeep(resultados);
         // devuelve promesas. Hidratamos con los datos de idPrograma y tipoEjercicio (pidiendo los doc reference)
         const ps = resultados.map((el, i) => hydrate(el, deepCopy[i], ['idprograma', 'tipoejercicio']));
+        // seteamos sin el hidrate
+        setResultados(resultados);
         // hidrata los resultados con sus hijos, cambiando la referencia para que el front se entere
         Promise.all(ps).then(() => setResultados(deepCopy))
       });
@@ -104,7 +106,7 @@ export default function Detail() {
   return <div>
     <PrimarySearchAppBar />
 
-    <h2 className='ml-5 mt-4 mx-auto'>Deportista: {deportista?.nombre} {deportista?.apellido1} {deportista?.apellido2}</h2>
+    <h2 className='mt-4 mx-auto'>Deportista: {deportista?.nombre} {deportista?.apellido1} {deportista?.apellido2}</h2>
 
     <div className="container mx-auto mt-5  flex flex-row flex-wrap " style={{ width: '80%' }}>
       {resultados.length > 0 ? (

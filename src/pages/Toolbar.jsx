@@ -29,6 +29,11 @@ export default function PrimarySearchAppBar() {
 
   const handleMenuClose = () => {
     setAnchorEl(null);
+    handleMobileMenuClose();
+  };
+
+  const handleClosesesion = () => {
+    setAnchorEl(null);
     localStorage.removeItem('token');
     navigate('../login');
     handleMobileMenuClose();
@@ -55,7 +60,7 @@ export default function PrimarySearchAppBar() {
       open={isMenuOpen}
       onClose={handleMenuClose}
     >
-      <MenuItem onClick={handleMenuClose}>Cerrar sesión</MenuItem>
+      <MenuItem onClick={handleClosesesion}>Cerrar sesión</MenuItem>
     </Menu>
   );
 
