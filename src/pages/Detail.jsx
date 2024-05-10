@@ -106,7 +106,7 @@ export default function Detail() {
   return <div>
     <PrimarySearchAppBar />
 
-    <h2 className='mt-4 mx-auto'>Deportista: {deportista?.nombre} {deportista?.apellido1} {deportista?.apellido2}</h2>
+    <h2 className='ml-6 mt-4 mx-auto'>Deportista: {deportista?.nombre} {deportista?.apellido1} {deportista?.apellido2}</h2>
 
     <div className="container mx-auto mt-5  flex flex-row flex-wrap " style={{ width: '80%' }}>
       {resultados.length > 0 ? (
@@ -124,8 +124,9 @@ export default function Detail() {
                   <Typography ><strong>PROGRAMA: </strong>{res.idprograma.descripcion}</Typography>
                 </AccordionSummary>
                 <AccordionDetails>
-                  <Typography>
-                    <Divider ><Chip label="detalles" size="small" /></Divider>
+                  <Typography component="div">
+                    <Divider >
+                      <Chip label="detalles" size="small" /></Divider>
                     Tiempo ejercicio: {res.idprograma.tejercicio}<br />
                     Tiempo descanso: {res.idprograma.tejercicio}<br />
                     Distancia: {res.idprograma.tejercicio}<br />
@@ -151,6 +152,7 @@ export default function Detail() {
                     <div style={{ textAlign: 'center' }}>
                       <DesktopDateTimePicker
                         readOnly
+                        disabled
                         format="DD-MMMM-YYYY HH:mm"
                         // Utiliza el valor de fecha completa res?.fecha como defaultValue
                         defaultValue={res?.fecha && dayjs(res?.fecha.seconds * 1000)}

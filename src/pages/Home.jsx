@@ -126,7 +126,7 @@ export default function Home() {
       <div className="container mx-auto mt-5  flex flex-row flex-wrap " style={{ width: '80%' }}>
         {deportistasFiltrados.length > 0 ? (
           deportistasFiltrados.map((deportista) => (
-            <div className="max-w-sm rounded overflow-hidden shadow-lg mx-2 ">
+            <div key={deportista.id} className="max-w-sm rounded overflow-hidden shadow-lg mx-2 ">
               <div className="px-6 py-4">
 
                 <React.Fragment>
